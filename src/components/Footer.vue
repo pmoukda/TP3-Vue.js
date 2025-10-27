@@ -15,7 +15,7 @@
                     <p class="cursor-pointer underline text-pink-400"><strong>Email: </strong>Sunvacay@info.com</p>
                 </div>
             </div>
-                <div className="max-w-screen-md mx-auto flex md:justify-end sm:justify-start gap-4 text-xl p-4"> 
+                <div class="max-w-screen-md mx-auto flex md:justify-end sm:justify-start gap-4 text-xl p-4"> 
                     <router-link class="cursor-pointer" to="#"><FaFacebook/></router-link>
                     <router-link class="cursor-pointer" to="#"><FaInstagram/></router-link>
                     <router-link class="cursor-pointer" to="#"><FaTiktok/></router-link>
