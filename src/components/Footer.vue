@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-20 bg-black text-white px-4 py-6">
+    <div class="mt-20 bg-black text-white px-4 pt-6">
             <div class="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-4">
                 <router-link class='logo text-3xl text-yellow-400 mt-2' to="/">SunVacay</router-link>
                 <div class="italic mt-2">
