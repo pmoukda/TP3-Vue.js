@@ -1,79 +1,59 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+font-family: 'Poppins'; 
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+h2{
+  @apply text-2xl font-semibold py-2 
 }
-a:hover {
-  color: #535bf2;
+h3{
+  @apply text-xl font-semibold py-4;
+}
+img{
+  object-fit: cover;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.logo{
+  font-weight: bold;
+  font-style: italic;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* boutons */
+.btn-pink{
+  @apply font-semibold border-2 border-pink-400 rounded w-lg text-center uppercase py-2 hover:bg-pink-400;
+}
+.btn-red{
+  @apply font-semibold bg-red-400 rounded w-lg text-center uppercase py-2 hover:bg-red-500;
+}
+.btn-small-red{
+  @apply font-semibold bg-red-400 px-4 py-2 rounded hover:bg-red-500;
+}
+.btn-yellow{
+  @apply rounded-md bg-yellow-500 text-xl py-4 px-6 hover:bg-red-400 uppercase hover:text-white mt-5;
+}
+.btn-blue{
+  @apply w-full bg-blue-600 text-white text-lg py-2 px-4 rounded hover:bg-blue-800 transition duration-300;
+}
+.btn-lg{
+  @apply w-lg
+}
+.btn-small-blue{
+  @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700;
+}
+.btn-small{
+ @apply bg-pink-500 text-white rounded-md w-40 hover:bg-pink-600;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+
+/* form */
+.form-control{
+  @apply block text-sm font-medium text-gray-700;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.input-group{
+  @apply mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 outline-none focus:ring-blue-500 focus:border-blue-500 bg-white ;
 }
 
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.text-img{
+  @apply max-w-screen-lg grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 bg-gray-100
 }
