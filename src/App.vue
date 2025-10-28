@@ -17,8 +17,8 @@
       <nav>
          <ul class="md:flex items-center justify-between text-lg text-white pt-4 md:pt-0">
           <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/" @click="closeMenu">Accueil</router-link></li>
-          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/apropos" @click="closeMenu">À Propos</router-link></li>
-          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/forfaits" @click="closeMenu">Les Forfaits</router-link></li>
+          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/about" @click="closeMenu">À Propos</router-link></li>
+          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/packages" @click="closeMenu">Les Forfaits</router-link></li>
           <div class="relative inline-block">
             <button type="button" class="mr-2 cursor-pointer">
               <Io5Cart class="text-2xl" />
