@@ -16,7 +16,7 @@
                 </div>
             </div>
                 <div class="max-w-screen-md mx-auto flex md:justify-end sm:justify-start gap-4 text-xl p-4"> 
-                    <router-link class="cursor-pointer" to="#"><FaFacebook/></router-link>
+                    <router-link class="cursor-pointer" to="#"><FaFacebookSquare/></router-link>
                     <router-link class="cursor-pointer" to="#"><FaInstagram/></router-link>
                     <router-link class="cursor-pointer" to="#"><FaTiktok/></router-link>
                 </div>
@@ -25,3 +25,15 @@
             </div>
         </div>
 </template>
+
+<script>
+    import { FaInstagram, FaTiktok, FaFacebookSquare } from 'vue-icons-plus/fa'
+
+    export default {
+        components:{
+            FaInstagram,
+            FaTiktok,
+            FaFacebookSquare
+        }
+    }
+</script>
