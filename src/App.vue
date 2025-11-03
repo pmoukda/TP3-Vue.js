@@ -16,14 +16,16 @@
           ]" id="menu">
       <nav>
          <ul class="md:flex items-center justify-between text-lg text-white pt-4 md:pt-0">
-          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/" @click="closeMenu">Accueil</router-link></li>
-          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/about" @click="closeMenu">À Propos</router-link></li>
-          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" to="/packages" @click="closeMenu">Les Forfaits</router-link></li>
+          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" :to="{ name:'home' }" @click="closeMenu">Accueil</router-link></li>
+          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" :to="{ name:'add-package' }" @click="closeMenu">Ajouter un forfait</router-link></li>
+          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" :to="{name:'about'}" @click="closeMenu">À Propos</router-link></li>
+          <li><router-link class="md:p-4 py-3 px-0 block hover:underline" :to="{name:'packages'}" @click="closeMenu">Les Forfaits</router-link></li>
           <div class="relative inline-block">
-            <button type="button" class="mr-2 cursor-pointer">
-              <Io5Cart class="text-2xl" />
+            <button type="button" @click="toggleSideBar" class="flex items-center md:order-2 space-x-3 md:space-x-0 bg-blue-600 rounded px-1 cursor-pointer hover:bg-blue-400 ">
+              <span>Mes réservations</span>
+              <FaSuitcaseRolling class="h-4 w-6" />
             </button>
-            <span class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/4 bg-red-500 text-white text-xs font-bold rounded-full px-1.5 py-0.5"></span>
+            <span class="absolute top-0 right-0 translate-x-1/2 -translate-y-2/4 bg-red-500 text-white text-xs font-bold rounded-full px-1.5 py-1.5"></span>
           </div>
         </ul>
       </nav>
@@ -32,7 +34,14 @@
   <Hero/>
   <div class="font-sans min-h-screen mt-24">
     <div class="container mx-auto p-2 max-w-screen-lg ">
-      <router-view/>
+      <SideBar
+      v-if="showCart"
+      :toggle="toggleSideBar"
+      :cartPackages="cartPackages"
+      :package="package"
+      />
+      <router-view
+      :package="package" />
     </div>
   </div>
   <Footer/>
@@ -41,27 +50,36 @@
 <script>
   import Hero from './components/Hero.vue';
   import Footer from './components/Footer.vue';
-  import { Io5Cart  } from 'vue-icons-plus/io5';
+  import SideBar from './components/SideBar.vue';
+  import { FaSuitcaseRolling  } from 'vue-icons-plus/fa';
+  import travelPlan from './travelPlan.json';
 
   export default {
-      components: {
-        Hero,
-        Footer,
-        Io5Cart   
-      },
-      data() {
-        return {
-        menuOpen: false
-        }
-      }, 
-      methods: {
-        toggleMenu(){
-          this.menuOpen =!this.menuOpen;
-        },
-        closeMenu() {
-          this.menuOpen = false;
-        } 
+    components: {
+      Hero,
+      Footer,
+      SideBar,
+      FaSuitcaseRolling   
+    },
+    data() {
+      return {
+      menuOpen: false,
+      showCart: false,
+      package: travelPlan,
+      cartPackages: {}
       }
+    }, 
+    methods: {
+      toggleMenu(){
+        this.menuOpen =!this.menuOpen;
+      },
+      closeMenu() {
+        this.menuOpen = false;
+      },
+      toggleSideBar(){
+        this.showCart = !this.showCart;
+      },
+    }
   }
 </script>
 
