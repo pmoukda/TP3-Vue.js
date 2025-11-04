@@ -12,7 +12,7 @@
       </div>
       <div class="flex justify-between p-4 ">
         <p class="text-xl text-red-400 mb-4"><strong>Prix: </strong> {{travelPlan.prix}} $</p>
-        <router-link class="btn-pink btn-small" to ="#">Réserver</router-link>
+        <button @click="add(travelPlan.nomForfait, planIndex)" class="btn-pink btn-small cursor-pointer">Réserver</button>
       </div>
     </div>
     <div class="flex justify-between items-center text-pink-600 px-2 py-4 underline hover:text-pink-800 gap-3 mt-3">

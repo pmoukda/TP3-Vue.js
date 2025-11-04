@@ -9,7 +9,7 @@
                     <li class='border border-gray-200 rounded p-2 bg-pink-100 text-pink-900'>Accompagnement personnalisé</li>
                 </ul>
                 <div class="flex justify-end">
-                    <router-link class='btn-pink btn-small mt-5' to="/about">En savoir plus</router-link>
+                    <router-link class='btn-pink btn-small mt-5' :to="{name:'about'}">En savoir plus</router-link>
                 </div>
             </div>
             <div class='mt-15'>
@@ -18,7 +18,7 @@
                     <div v-for="(travelPlan, i) in package.slice(2, 6)" :key="i" class="max-w-lg bg-white rounded-md shadow p-2 transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer overflow-hidden flex flex-col">
                         <div class="px-2 py-2 flex-1">
                             <h2 class="text-lg font-bold">{{travelPlan.nomForfait}}</h2>
-                            <p class="text-red-400 text-lg mt-2 mb-4"><strong>Prix: </strong>{{travelPlan.prix.toFixed(0)}} $</p>
+                            <p class="text-red-400 text-lg mt-2 mb-4"><strong>Prix: </strong>{{Number(travelPlan.prix).toFixed(0)}} $</p>
                         </div>
                             <div class="overflow-hidden px-2">
                                 <img class="aspect-4/3 object-cover" :src="travelPlan.image" alt="image" />
