@@ -1,5 +1,5 @@
 module.exports = (connex, Sequelize) =>{
-    const Product = connex.define('product', {
+    const Package = connex.define('package', {
         nomForfait: {
             type: Sequelize.STRING
         },
@@ -15,7 +15,8 @@ module.exports = (connex, Sequelize) =>{
         image: {
             type: Sequelize.STRING
         }
+            
     })
     
-    return Product
+    return Package
 }

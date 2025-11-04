@@ -1,5 +1,6 @@
 const db = require('../models') 
-const Package = db.package
+const Package = db.packages
+// console.log(Package); 
 
 exports.findAll = (req, res) => {
     Package.findAll()
@@ -15,7 +16,6 @@ exports.findAll = (req, res) => {
 }
 
 exports.create = (req, res) => {
-
     if(!req.body.nomForfait){
         res.status(400).send({
             message: 'Le nom du forfait est obligatoire'
@@ -29,9 +29,10 @@ exports.create = (req, res) => {
     })
     .catch(err => {
         res.status(500).send({
-        message: 'Echec lors de la création du forfait.'
+        message: 'Échec lors de la création du forfait.'
         })
     })
+
 }
 
 exports.findOne = (req, res) => {
