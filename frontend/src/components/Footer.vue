@@ -21,7 +21,7 @@
                     <router-link class="cursor-pointer" to="#"><FaTiktok/></router-link>
                 </div>
             <div class="text-center p-3 border-t border-gray-800">
-                <p>React &copy; SunVacay.2025 -Tous droits réservés.</p>
+                <p>Vue &copy; SunVacay.2025 -Tous droits réservés.</p>
             </div>
         </div>
 </template>
