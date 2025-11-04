@@ -1,12 +1,13 @@
 import http from '../http-common'
+
 class PackageDataService {
   getAll () {
     return http.get('/package')
   }
 
-  create (data) {
-    return http.post('/package', data)
-  }
+    create (data) {
+      return http.post('/package', data)
+    }
 
   get (id) {
     return http.get(`/package/${id}`)
@@ -21,3 +22,4 @@ class PackageDataService {
   }
 }
 export default new PackageDataService()
+
