@@ -39,7 +39,7 @@
       :toggle="toggleSideBar"
       :cartPackages="cartPackages"
       :package="package"
-      :remove="removePlan"
+      :removePack="removePackage"
       />
       <router-view
       :package="package" 
@@ -48,6 +48,8 @@
       :updatePack="updatePackage"
       :removePack="removePackage"
       :remove="removePlan"
+      :toggleMenu="toggleMenu"
+      :toggleClose="closeMenu"
       />
     </div>
   </div>
@@ -76,7 +78,7 @@
         // console.log(response.data)
       })
       .catch(error => {
-        console.error('Erreur lors de la récupération des données:', error)
+        console.error('Erreur lors de la récupération des données', error)
       })
     },
     data() {
@@ -103,14 +105,14 @@
       updatePackage (index, data) {
       this.package[index] = data
       },
-      removePackage (index) {
+      removePlan (index) {
       this.package.splice(index,1)
       },
       addToCart(travelPlan, index){
       if (!this.cartPackages[travelPlan]) this.cartPackages[travelPlan] = 0
        this.cartPackages[travelPlan] += this.package[index].quantity
     },
-      removePlan (nomForfait) {
+      removePackage (nomForfait) {
       delete this.cartPackages[nomForfait]
       },
     }

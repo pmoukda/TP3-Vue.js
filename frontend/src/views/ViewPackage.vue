@@ -21,7 +21,6 @@
       </div>
         
       <router-link :to="{name: 'edit-package', params: { id: travelPlan.id} }" class="  btn-small-blue  flex gap-1 "><FaRegEdit />Modifier </router-link>
-        
     </div>
   </div>     
 </template>

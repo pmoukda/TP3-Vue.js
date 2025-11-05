@@ -13,6 +13,7 @@
                             name='nomForfait'
                             placeholder="Nom du forfait"
                             v-model="package.nomForfait"
+                            required
                         />
                     </div>
                     <div class="form-control">
@@ -25,11 +26,12 @@
                             step={0.01}
                             placeholder="Entrez un prix"
                             v-model.number="package.prix"
+                            required
                         />
                     </div>
                     <div class="form-control">
                         <label for="categorie">Catégorie</label>
-                        <select v-model="package.categorie" class="input-group" name="categorie" id="categorie">
+                        <select v-model="package.categorie" class="input-group" name="categorie" id="categorie" required>
                             <option value="">Choisir une categorie</option>
                             <option value="Sport">Sport</option>
                             <option value="bien-etre">Bien-être</option>
@@ -37,6 +39,7 @@
                             <option value="aventure">Aventure</option>
                             <option value="croissière">Croisière</option>
                             <option value="culturel">Culturel</option>
+                            
                         </select>
                     </div>
                     <div class="form-control">
@@ -47,6 +50,7 @@
                             name='image'
                             placeholder="Entrez un URL"
                             v-model="package.image"
+                            required
                         />
                     </div>
                 </div>
@@ -57,6 +61,7 @@
                         name='description'
                         placeholder="Description"
                         v-model="package.description"
+                        required
                     ></textarea>
                 </div>
                 <button type="button" @click="savePackage" class="btn-blue mt-6 mb-6">Ajouter</button>
@@ -64,10 +69,12 @@
         </div>    
         <div v-else>
             <div class="text-green-800 font-semibold mb-4">Création du forfait réussit!</div>
-            <button @click="newPackage" class="w-full bg-green-700 text-white p-2 rounded-3xl hover:bg-green-800">
+            <button @click="newPackage" class="w-full bg-green-700 text-white p-2 rounded-3xl hover:bg-green-800 mb-8">
                 Ajouter un nouveau forfait
             </button>
+            <router-link class="text-pink-600 px-2 py-4 underline hover:text-pink-800 gap-3 text-center " :to="{ name:'packages'}"> Retour aux forfaits</router-link>
         </div>
+
     </div>
 </template>
 
@@ -110,7 +117,7 @@
                     description: '',
                     prix: '',
                     categorie: '',
-                    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
+                    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05',
                 }
             }
         },
